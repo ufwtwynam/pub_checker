@@ -24,6 +24,13 @@ public class ServerTest {
 //        check age is over 18
         assertThat(server.canServeGuest(guest)).isEqualTo(true);
     }
+    @Test
+    public void cannotBeServedUnder18(){
+//        guest needs age
+//        check age is over 18
+        guest = new Guest("John", 17);
+        assertThat(server.canServeGuest(guest)).isEqualTo(false);
+    }
 
     // TODO: test that guest can only get served if has enough money to buy a drink (every drink is £5)
 
